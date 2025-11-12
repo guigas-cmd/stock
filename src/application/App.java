@@ -1,5 +1,5 @@
 package application;
-import entities.Product;
+import entities.ProductClass;
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -8,8 +8,7 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product Product;
-        Product = new Product();
+        ProductClass Product = new ProductClass();
 
         System.out.println("Enter product data: ");
         System.out.println("Name: ");
@@ -22,7 +21,7 @@ public class App {
         Product.quantity = sc.nextInt();
 
         // PRODUCT DATA
-        System.out.printf("Product data: %s, $ %.2f, %d units, $ %.2f Total: \n",
+        System.out.printf("Product data: %s, $ %.2f, %d units, $ Total: %.2f  \n",
                 Product.name, Product.price, Product.quantity, Product.getTotal());
 
         System.out.println("Enter the number of products to be added in stock: ");
@@ -30,7 +29,7 @@ public class App {
         Product.addProducts(add); // chama metodo 2
 
         // UPDATE DATA
-        System.out.printf("Uptdated data: %s %.2f %d $ %.2f Total:",
+        System.out.printf("Uptdated data: %s %.2f %d $ Total: %.2f ",
                 Product.name, Product.price, Product.quantity, Product.getTotal());
 
         System.out.println("Enter the number of products to be removed from stock: ");
@@ -38,7 +37,7 @@ public class App {
         Product.removeProducts(remove);
 
         // UPDATE DATA
-        System.out.printf("Uptdated data: %s %.2f %d $ %.2f Total:",
+        System.out.printf("Uptdated data: %s %.2f %d $ Total: %.2f ",
                 Product.name, Product.price, Product.quantity, Product.getTotal());
 
         sc.close();

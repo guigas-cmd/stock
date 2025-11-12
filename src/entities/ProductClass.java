@@ -1,6 +1,6 @@
 package entities;
 
-    public class Product {
+    public class ProductClass {
           public String name;
           public double price;
           public int quantity;
@@ -21,6 +21,7 @@ package entities;
         return this.quantity;
     }
 
+    // TOTAL
     public double getTotal(){
         return price * quantity;
     }
