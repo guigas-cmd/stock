@@ -6,25 +6,29 @@ package entities;
           public int quantity;
 
 
+    public double getTotal(){
+         return price * quantity;
+        }
+
     // metodo 1: adiciona produtos ao estoque
     // this. >> usado para diferenciar o atributo classe do parametro do metodo qnd ambos tiverem o msm nome
-
-    public int addProducts(int quantityToAdd){
-         this.quantity = this.quantity + quantityToAdd; // ou this.quantity += quantitytoAdd;
-         return this.quantity;
+    public void addProducts(int quantityToAdd){
+         this.quantity += quantityToAdd;
     }
 
     // metodo 2: remove produtos do estoque
-
-    public int removeProducts(int quantityToRemove){
-        this.quantity = this.quantity - quantityToRemove;
-        return this.quantity;
+    public void removeProducts(int quantityToRemove){
+        this.quantity -= quantityToRemove;
     }
 
-    // TOTAL
-    public double getTotal(){
-        return price * quantity;
+    // toString faz chamado normal no App.java, n e necessario declarar product.toString()
+    public String toString(){
+        return name
+            + ", $ "
+            + String.format("%.2f", price)
+            + ", "
+            + quantity
+            + " units, Total: $ "
+            + String.format("%.2f", getTotal());
     }
-
-
 }

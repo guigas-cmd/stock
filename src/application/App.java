@@ -8,37 +8,34 @@ public class App {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        ProductClass Product = new ProductClass();
+        ProductClass product = new ProductClass();
 
         System.out.println("Enter product data: ");
         System.out.println("Name: ");
-        Product.name = sc.next();
+        product.name = sc.nextLine();
 
         System.out.println("Price: ");
-        Product.price = sc.nextDouble();
+        product.price = sc.nextDouble();
 
         System.out.println("Quantity in stock: ");
-        Product.quantity = sc.nextInt();
+        product.quantity = sc.nextInt();
 
         // PRODUCT DATA
-        System.out.printf("Product data: %s, $ %.2f, %d units, $ Total: %.2f  \n",
-                Product.name, Product.price, Product.quantity, Product.getTotal());
+        System.out.println("Product data: " + product);
 
         System.out.println("Enter the number of products to be added in stock: ");
         int add = sc.nextInt();
-        Product.addProducts(add); // chama metodo 2
+        product.addProducts(add);
 
         // UPDATE DATA
-        System.out.printf("Uptdated data: %s %.2f %d $ Total: %.2f ",
-                Product.name, Product.price, Product.quantity, Product.getTotal());
+        System.out.println(product);
 
         System.out.println("Enter the number of products to be removed from stock: ");
         int remove = sc.nextInt();
-        Product.removeProducts(remove);
+        product.removeProducts(remove);
 
         // UPDATE DATA
-        System.out.printf("Uptdated data: %s %.2f %d $ Total: %.2f ",
-                Product.name, Product.price, Product.quantity, Product.getTotal());
+        System.out.println(product);
 
         sc.close();
     }
